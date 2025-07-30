@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFtransformer.Pages.child"
+        xmlns:ikw="http://schemas.inkore.net/lib/ui/wpf" x:Class="WPFtransformer.Pages.child.CHW"
+        mc:Ignorable="d"
+        Title="GuaGua" Height="450" Width="800" Loaded="Window_Loaded" Closed="Window_Closed"     
+    WindowStyle="None"   
+    AllowsTransparency="True"      
+    Background="Transparent"
+    SourceInitialized="Window_SourceInitialized"
+     >
+    <!-- 外层蓝色边框 -->
+    <Border x:Name="RootBorder"
+          BorderBrush="#FF51B4FF"
+          BorderThickness="4"
+          Background="Transparent">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <!-- 标题栏 -->
+                <RowDefinition Height="*"/>
+                <!-- 内容区 -->
+            </Grid.RowDefinitions>
+            <!-- 标题栏 -->
+            <Grid Grid.Row="0"
+            Background="#220000FF"
+            MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <TextBlock Text="拖动以选择你的识别范围"
+                   VerticalAlignment="Center"
+                   Margin="12,0,0,0"
+                   FontSize="14"
+                   Foreground="White"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0,0,8,0">
+                    <Button Click="Minimize_Click" Content="🗕" />
+                    <Button Click="MaxRestore_Click" Content="□" />
+                    <Button Click="Close_Click" Content="✕" />
+                </StackPanel>
+            </Grid>
+            <!-- 主体内容 -->
+            <Grid Grid.Row="1" Background="Transparent">
+                <!-- 放置其他控件 -->
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
